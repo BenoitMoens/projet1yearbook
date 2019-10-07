@@ -1,0 +1,104 @@
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: arial;
+    }
+    
+    .nav-container {
+        width: 100%;
+        height: 100px;
+        position: fixed;
+        z-index: 1;
+    }
+    
+    .nav-bar {
+        height: 60px;
+        background-color: rgb(192, 34, 34);
+        color: white;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 60px;
+        background-image: url("./WCS_transparent.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+        margin-left: 10px;
+    }
+    
+    .nav-subbar {
+        height: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .nav-visible {
+        width: 40%;
+        background-color: rgb(192, 34, 34);
+    }
+    
+    .nav-invisible {
+        width: 20px;
+        border-top: 20px solid rgb(192, 34, 34);
+        border-right: 20px solid transparent
+    }
+    
+    .test {
+        position: relative;
+        top: 100px;
+        width: 90%;
+        margin: auto;
+    }
+    
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        top: 10;
+        left: 20;
+    }
+    
+    .menu-bar {
+        border-radius: 5px;
+        background-color: white;
+        text-transform: uppercase;
+        color: red;
+        height: 10px;
+        font-size: 8px;
+        text-align: center;
+        margin-bottom: 2px;
+    }
+    
+    .nav-top-article {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    
+    .nav-top-invisible {
+        width: 0;
+        border-bottom: 20px solid rgba(199, 68, 68, 0.3);
+        border-left: 20px solid transparent;
+    }
+    
+    .nav-top-visible {
+        width: 40%;
+        background-color: rgba(199, 68, 68, 0.3);
+        text-align: center;
+    }
+    
+    .carte {
+        width: 100%;
+        height: 50%;
+        background-color: rgba(199, 68, 68, 0.3);
+        margin-bottom: 20px;
+    }
