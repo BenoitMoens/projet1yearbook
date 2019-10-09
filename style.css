@@ -17,17 +17,63 @@
         color: white;
         display: flex;
         flex-direction: row;
+        order: 1px solid black;
+    }
+    
+    .nav-pan {
+        display: none;
+    }
+    
+    h1 {
+        margin-top: 10px;
+        margin-left: 30px;
+        position: fixed;
+        font-family: 'Pokemon Hollow';
+    }
+    
+    .cercle {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+        background: red;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    
+    .cercle2 {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+        background: yellow;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+    
+    .cercle3 {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 1px solid black;
+        background: green;
+        margin-top: 5px;
+        margin-right: 5px;
     }
     
     .logo {
-        width: 80px;
-        height: 60px;
+        width: 60px;
+        height: 40px;
         background-image: url("./WCS_transparent.png");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         z-index: 1;
-        margin-left: 10px;
+        text-align: right;
+        margin-right: 10px;
+        position: fixed;
+        right: 0;
+        top: 10px;
     }
     
     .nav-subbar {
@@ -43,9 +89,23 @@
     }
     
     .nav-invisible {
-        width: 20px;
-        border-top: 20px solid rgb(192, 34, 34);
-        border-right: 20px solid transparent
+        color: #fff;
+        position: relative;
+        padding: 10px;
+        /* optionnel */
+        display: inline-block;
+        margin: 30px;
+        content: " ";
+        background: rgb(192, 34, 34);
+        top: -31px;
+        left: -60px;
+        right: 0px;
+        bottom: 0;
+        z-index: -1;
+        transform: skewX(-45deg);
+        width: 40px;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
     }
     
     .test {
@@ -53,7 +113,6 @@
         top: 100px;
         width: 200%;
         display: flex;
-        flex-direction: row;
         height: 80%;
         display: flex;
         flex-direction: row;
@@ -100,6 +159,20 @@
         text-align: center;
     }
     
+    .image {
+        width: 110px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+    
+    .pokeball {
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+        margin-top: 10px;
+    }
+    
     .carte {
         box-sizing: border-box;
         width: 200%;
@@ -113,9 +186,10 @@
         background-image: url("/Fond01.png");
         height: 100%;
         margin-top: -20px;
+        justify-content: center;
     }
     
-    .image {
+    .img-profile {
         width: 200px;
         height: 200px;
         margin-bottom: 10px;
@@ -135,6 +209,7 @@
         text-overflow: ellipsis;
         padding: 20px;
         text-align: center;
+        background-image: url("Fond01.png");
     }
     
     .proprietes div {
@@ -166,4 +241,23 @@
     .form {
         position: fixed;
         top: 100px;
+    }
+    
+    @media screen and (min-width:786px) {
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .nav-container {
+            width: 100%;
+            position: relative;
+        }
+        .footer {
+            display: none;
+        }
+        .nav-pan {
+            height: 100%;
+            background-color: red;
+        }
     }
