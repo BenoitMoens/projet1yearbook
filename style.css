@@ -6,10 +6,13 @@
     
     .nav-container {
         width: 100%;
-        height: 60px;
+        height: 80px;
         position: fixed;
         z-index: 1;
     }
+
+    .overview {display: none;}
+    .nav-pan { display:none;}
     
     .nav-bar {
         height: 60px;
@@ -18,10 +21,6 @@
         display: flex;
         flex-direction: row;
         order: 1px solid black;
-    }
-    
-    .nav-pan {
-        display: none;
     }
     
     h1 {
@@ -85,7 +84,7 @@
     
     .nav-visible {
         width: 40%;
-        background-color: rgba(192, 34, 34);
+        background-color: rgb(192, 34, 34);
     }
     
     .nav-invisible {
@@ -110,15 +109,12 @@
     
     .test {
         position: relative;
+        top: 80px;
         width: 1800%;
         display: flex;
-        height: 100%;
+        height: 80%;
         display: flex;
         flex-direction: row;
-    }
-    
-    .overview {
-        display: none;
     }
     
     .menu {
@@ -177,9 +173,10 @@
     }
     
     .carte {
-        position: relative;
         box-sizing: border-box;
         width: 200%;
+        height: 80%;
+        margin-bottom: 20px;
         display: flex;
         /*border: 2px solid rgba(199, 68, 68, 0.3); */
         flex-direction: column;
@@ -187,6 +184,7 @@
         border-radius: 20px;
         background-image: url("/Fond01.png");
         height: 100%;
+        margin-top: -20px;
         justify-content: center;
     }
     
@@ -210,7 +208,6 @@
         text-overflow: ellipsis;
         padding: 20px;
         text-align: center;
-        background-image: url("Fond01.png");
     }
     
     .proprietes div {
@@ -232,79 +229,156 @@
     }
     
     .footer {
-        position: absolute;
+        position: fixed;
         bottom: 0;
-        height: 40px;
+        height: 60px;
         width: 100%;
-        background-color: rgb(194, 34, 34);
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        background-color: rgb(192, 34, 34);
+        padding: 0;
+        padding-bottom: 30px;
     }
     
     .form {
         position: fixed;
         top: 100px;
     }
-    /*Dealing with svgs*/
-    
-    svg {
-        border: 1px solid white;
-        border-radius: 50%;
-        padding: 5px;
+    /* .icons
+    {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 12px;
     }
-    
-    @media screen and (min-width:786px) {
-        body {}
-        main {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 100%;
-        }
-        .nav-container {
-            height: 100%;
-            position: static;
-            top: 0;
-            width: 40%
-        }
-        .footer {
-            display: none;
-        }
-        .nav-pan {
-            display: flex;
-            height: calc(100% - 80px);
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-        .nav-menu-item {
-            background-color: white;
-            color: black;
-            border-bottom: 1px solid grey;
-            height: 100%;
-            width: 100%;
-            text-align: center;
-        }
-        .nav-menu-item:hover {
-            cursor: pointer;
-        }
-        .test {
-            position: relative;
-            display: flex;
-            height: 1800%;
-            display: flex;
-            flex-direction: column;
-            width: 60%;
-            margin: auto;
-        }
+  
+    .fa-undo-alt
+    {
+        color: white;
+    }
+    .fa-heart
+    {
+        color: white;
+    }
+    .fa-star
+    {
+        color: white;
+        
+    }
+    .fa-times
+    {
+        color: white;
+    } */
+
+    @media screen and (min-width:768px)
+    {
         .carte {
+            box-sizing: border-box;
             width: 100%;
+            height: 80%;
+            margin-bottom: 20px;
+            display: flex;
+            /*border: 2px solid rgba(199, 68, 68, 0.3); */
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+            background-image: url("/Fond01.png");
             height: 100%;
+            margin-top: -20px;
+            justify-content: center;
+           
+        }
+        /* .proprietes
+        {
+            margin-left: 400px;
+            font-size: 20px;
+        } */
+        .img-profile
+        {
+            margin-left: 400px;
+            width: 350px;
+            height: 350px;
+            
+        }
+        .test {width: 100%;
+        height:1800%;
+    flex-direction:column}
+        .carte h2
+        {
+            margin-left: 400px;
+            font-size: 50px;
+        }
+        .proprietes {
+            display: grid;
+            grid-template-columns: 120px 240px;
+            grid-template-rows: auto;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            padding: 20px;
+            font-size: 20px;
+            margin-left: 450px;
+        }
+        .proprietes div:nth-child(2n+1) {
+            
+            text-align: left;
+        }
+        .nav-pan 
+        {
+            display: grid;
+            grid-template-columns: 300px 300px;
+            grid-template-rows: auto;
+            
+            height: 790px;
+            width: 600px;
+            background-color: white;
+            vertical-align: center;
+            
+        }
+        .nav-menu-item
+        {
+            text-align:left;
+            color:black;
+            font-size: 30px;
+            font-weight: bold;
+            vertical-align: center;
+            
+            
+        }
+
+        .image {
+            width: 250px;
+            height: 60px;
+            margin-top: 5px;
+            margin-left: 25px;
+        }
+        .nav-menu-item:hover
+        {
+            color: yellow;
+            background-color:rgb(192, 34, 34);
+            border-radius: 20px;
+            
+            /* padding-top: 10px;
+            padding-bottom: 5px; */
+        }
+        .profile-pic {
+            /* explanation below */
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 1px solid rgb(194, 34, 34);
+            padding: 15px;
+            border-top: none;
+            margin-top: 10px;
+            margin-right: 5px;
         }
         .overview {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            /* width: 900px; */
+            align-items: center;
+            margin-left: 600px;
+            top: 80px;
         }
-        .overview img:last-child() {}
+        a
+        {
+            text-decoration: none;
+        }
     }
