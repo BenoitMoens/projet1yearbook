@@ -1,384 +1,331 @@
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Raleway, arial;
-    }
-    
-    .nav-container {
-        width: 100%;
-        height: 80px;
-        position: fixed;
-        z-index: 1;
-    }
-
-    .overview {display: none;}
-    .nav-pan { display:none;}
-    
-    .nav-bar {
-        height: 60px;
-        background-color: rgb(192, 34, 34);
-        color: white;
-        display: flex;
-        flex-direction: row;
-        order: 1px solid black;
-    }
-    
-    h1 {
-        margin-top: 10px;
-        margin-left: 30px;
-        position: fixed;
-        font-family: 'Pokemon Hollow';
-    }
-    
-    .cercle {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-        border: 1px solid black;
-        background: red;
-        margin-top: 5px;
-        margin-right: 5px;
-    }
-    
-    .cercle2 {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-        border: 1px solid black;
-        background: yellow;
-        margin-top: 5px;
-        margin-right: 5px;
-    }
-    
-    .cercle3 {
-        width: 10px;
-        height: 10px;
-        border-radius: 10px;
-        border: 1px solid black;
-        background: green;
-        margin-top: 5px;
-        margin-right: 5px;
-    }
-    
-    .logo {
-        width: 60px;
-        height: 40px;
-        background-image: url("./WCS_transparent.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 1;
-        text-align: right;
-        margin-right: 10px;
-        position: fixed;
-        right: 0;
-        top: 10px;
-    }
-    
-    .nav-subbar {
-        height: 20px;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .nav-visible {
-        width: 40%;
-        background-color: rgb(192, 34, 34);
-    }
-    
-    .nav-invisible {
-        color: #fff;
-        position: relative;
-        padding: 10px;
-        /* optionnel */
-        display: inline-block;
-        margin: 30px;
-        content: " ";
-        background: rgb(192, 34, 34);
-        top: -31px;
-        left: -60px;
-        right: 0px;
-        bottom: 0;
-        z-index: -1;
-        transform: skewX(-45deg);
-        width: 40px;
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
-    }
-    
-    .test {
-        position: relative;
-        top: 80px;
-        width: 1800%;
-        display: flex;
-        height: 80%;
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        position: relative;
-        top: 10;
-        left: 20;
-    }
-    
-    .menu-bar {
-        border-radius: 5px;
-        background-color: white;
-        text-transform: uppercase;
-        color: red;
-        height: 10px;
-        font-size: 8px;
-        text-align: center;
-        margin-bottom: 2px;
-    }
-    
-    .nav-top-article {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-    
-    .nav-top-invisible {
-        width: 0;
-        border-bottom: 20px solid rgba(199, 68, 68, 0.3);
-        border-left: 20px solid transparent;
-    }
-    
-    .nav-top-visible {
-        width: 40%;
-        background-color: rgba(199, 68, 68, 0.3);
-        text-align: center;
-    }
-    
-    .image {
-        width: 110px;
-        height: 30px;
-        margin-top: 10px;
-        margin-left: 25px;
-    }
-    
-    .pokeball {
-        width: 40px;
-        height: 40px;
-        margin: 10px;
-        margin-top: 10px;
-    }
-    
-    .carte {
-        box-sizing: border-box;
-        width: 200%;
-        height: 80%;
-        margin-bottom: 20px;
-        display: flex;
-        /*border: 2px solid rgba(199, 68, 68, 0.3); */
-        flex-direction: column;
-        align-items: center;
-        border-radius: 20px;
-        background-image: url("/Fond01.png");
-        height: 100%;
-        margin-top: -20px;
-        justify-content: center;
-    }
-    
-    .img-profile {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 10px;
-        border-radius: 50%;
-        border: 2px solid rgba(199, 68, 68, 1);
-        border-bottom: 0;
-        border-left: 0;
-        padding: 20px;
-    }
-    
-    .proprietes {
-        display: grid;
-        grid-template-columns: 120px 120px;
-        grid-template-rows: auto;
-        text-transform: uppercase;
-        font-size: 12px;
-        text-overflow: ellipsis;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    .proprietes div {
-        padding-bottom: 5px;
-    }
-    
-    .proprietes div:nth-child(2n+1) {
-        font-weight: 600;
-        text-align: right;
-    }
-    
-    .proprietes div:nth-child(2n) {
-        text-align: left;
-        padding-left: 10px;
-    }
-    
-    .proprietes div img {
-        height: 15px;
-    }
-    
-    .footer {
-        position: fixed;
-        bottom: 0;
-        height: 60px;
-        width: 100%;
-        background-color: rgb(192, 34, 34);
-        padding: 0;
-        padding-bottom: 30px;
-    }
-    
-    .form {
-        position: fixed;
-        top: 100px;
-    }
-    /* .icons
-    {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 12px;
-    }
-  
-    .fa-undo-alt
-    {
-        color: white;
-    }
-    .fa-heart
-    {
-        color: white;
-    }
-    .fa-star
-    {
-        color: white;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Raleway, arial;
+        }
         
-    }
-    .fa-times
-    {
-        color: white;
-    } */
-
-    @media screen and (min-width:768px)
-    {
+        .police {
+            font-family: 'Pokemon hollow';
+        }
+        
+        .nav-container {
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            z-index: 1;
+        }
+        
+        .nav-bar {
+            height: 50px;
+            background-color: rgb(192, 34, 34);
+            color: white;
+            display: flex;
+            flex-direction: row;
+            order: 1px solid black;
+        }
+        
+        .nav-pan {
+            display: none;
+        }
+        
+        h1 {
+            margin-top: 10px;
+            margin-left: 30px;
+            position: fixed;
+            font-family: 'Pokemon Hollow';
+        }
+        
+        .cercle {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background: red;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+        
+        .cercle2 {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background: yellow;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+        
+        .cercle3 {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            background: green;
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 50px;
+            background-image: url("./WCS_transparent.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+            text-align: right;
+            margin-right: 10px;
+            position: fixed;
+            right: 0;
+            top: 0px
+        }
+        
+        .nav-subbar {
+            height: 20px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .nav-visible {
+            width: 40%;
+            background-color: rgba(192, 34, 34);
+        }
+        
+        .nav-invisible {
+            color: #fff;
+            position: relative;
+            padding: 10px;
+            /* optionnel */
+            display: inline-block;
+            margin: 30px;
+            content: " ";
+            background: rgb(192, 34, 34);
+            top: -30px;
+            left: -60px;
+            right: 0px;
+            bottom: 0;
+            z-index: -1;
+            transform: skewX(-45deg);
+            width: 40px;
+        }
+        
+        .test {
+            position: relative;
+            width: 1900%;
+            display: flex;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .overview {
+            display: none;
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: relative;
+            top: 10;
+            left: 20;
+        }
+        
+        .menu-bar {
+            border-radius: 5px;
+            background-color: white;
+            text-transform: uppercase;
+            color: red;
+            height: 10px;
+            font-size: 8px;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        
+        .nav-top-article {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        
+        .nav-top-invisible {
+            width: 0;
+            border-bottom: 20px solid rgba(199, 68, 68, 0.3);
+            border-left: 20px solid transparent;
+        }
+        
+        .nav-top-visible {
+            width: 40%;
+            background-color: rgba(199, 68, 68, 0.3);
+            text-align: center;
+        }
+        
+        .image {
+            width: 120px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 25px;
+        }
+        
+        .pokeball {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            margin-top: 10px;
+        }
+        
         .carte {
+            position: relative;
             box-sizing: border-box;
             width: 100%;
-            height: 80%;
-            margin-bottom: 20px;
+            display: flex;
+            /*border: 2px solid rgba(199, 68, 68, 0.3); */
+            flex-direction: column;
+            align-items: center;
+            background-image: url("/Fond01.png");
+            height: 100%;
+            justify-content: center;
+            border: 0;
+        }
+        
+        .carte-fond {
+            position: relative;
+            box-sizing: border-box;
+            width: 100%;
             display: flex;
             /*border: 2px solid rgba(199, 68, 68, 0.3); */
             flex-direction: column;
             align-items: center;
             border-radius: 20px;
-            background-image: url("/Fond01.png");
             height: 100%;
-            margin-top: -20px;
             justify-content: center;
-           
+            background-image: linear-gradient(grey, white);
+            text-transform: uppercase;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            padding: 15px;
+            text-align: center;
         }
-        /* .proprietes
-        {
-            margin-left: 400px;
-            font-size: 20px;
-        } */
-        .img-profile
-        {
-            margin-left: 400px;
-            width: 350px;
-            height: 350px;
-            
+        
+        .img-profile {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(199, 68, 68, 1);
+            border-bottom: 0;
+            border-left: 0;
+            padding: 20px;
         }
-        .test {width: 100%;
-        height:1800%;
-    flex-direction:column}
-        .carte h2
-        {
-            margin-left: 400px;
-            font-size: 50px;
-        }
+        
         .proprietes {
             display: grid;
-            grid-template-columns: 120px 240px;
+            grid-template-columns: 120px 120px;
             grid-template-rows: auto;
             text-transform: uppercase;
             font-size: 12px;
             text-overflow: ellipsis;
             padding: 20px;
-            font-size: 20px;
-            margin-left: 450px;
+            text-align: center;
         }
+        
+        .proprietes div {
+            padding-bottom: 5px;
+        }
+        
         .proprietes div:nth-child(2n+1) {
-            
+            font-weight: 600;
+            text-align: right;
+        }
+        
+        .proprietes div:nth-child(2n) {
             text-align: left;
+            padding-left: 10px;
         }
-        .nav-pan 
-        {
-            display: grid;
-            grid-template-columns: 300px 300px;
-            grid-template-rows: auto;
-            
-            height: 790px;
-            width: 600px;
-            background-color: white;
-            vertical-align: center;
-            
+        
+        .proprietes div img {
+            height: 15px;
         }
-        .nav-menu-item
-        {
-            text-align:left;
-            color:black;
-            font-size: 30px;
-            font-weight: bold;
-            vertical-align: center;
-            
-            
-        }
-
-        .image {
-            width: 250px;
-            height: 60px;
-            margin-top: 5px;
-            margin-left: 25px;
-        }
-        .nav-menu-item:hover
-        {
-            color: yellow;
-            background-color:rgb(192, 34, 34);
-            border-radius: 20px;
-            
-            /* padding-top: 10px;
-            padding-bottom: 5px; */
-        }
-        .profile-pic {
-            /* explanation below */
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 1px solid rgb(194, 34, 34);
-            padding: 15px;
-            border-top: none;
-            margin-top: 10px;
-            margin-right: 5px;
-        }
-        .overview {
+        
+        .footer {
+            position: absolute;
+            bottom: 0;
+            height: 50px;
+            width: 100%;
+            background-color: rgb(194, 34, 34);
             display: flex;
-            flex-wrap: wrap;
-            /* width: 900px; */
-            align-items: center;
-            margin-left: 600px;
-            top: 80px;
+            flex-direction: row;
+            justify-content: space-around;
         }
-        a
-        {
-            text-decoration: none;
+        
+        .form {
+            position: fixed;
+            top: 100px;
         }
-    }
+        /*Dealing with svgs*/
+        
+        svg {
+            border: 1px solid white;
+            border-radius: 50%;
+            padding: 2px;
+            margin-top: 2px;
+        }
+        
+        @media screen and (min-width:786px) {
+            body {}
+            main {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 100%;
+            }
+            .nav-container {
+                height: 100%;
+                position: static;
+                top: 0;
+                width: 40%
+            }
+            .footer {
+                display: none;
+            }
+            .nav-pan {
+                display: flex;
+                height: calc(100% - 80px);
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            .nav-menu-item {
+                background-color: white;
+                color: black;
+                border-bottom: 1px solid grey;
+                height: 100%;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-menu-item:hover {
+                cursor: pointer;
+            }
+            .test {
+                position: relative;
+                display: flex;
+                height: 1800%;
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+                margin: auto;
+            }
+            .carte {
+                width: 100%;
+                height: 100%;
+            }
+            .overview {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .overview img:last-child() {}
+        }
