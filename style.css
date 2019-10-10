@@ -117,6 +117,10 @@
         flex-direction: row;
     }
     
+    .overview {
+        display: none;
+    }
+    
     .menu {
         display: flex;
         flex-direction: column;
@@ -232,7 +236,7 @@
         bottom: 0;
         height: 40px;
         width: 100%;
-        background-color: red;
+        background-color: rgb(194, 34, 34);
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -242,28 +246,65 @@
         position: fixed;
         top: 100px;
     }
+    /*Dealing with svgs*/
+    
+    svg {
+        border: 1px solid white;
+        border-radius: 50%;
+        padding: 5px;
+    }
     
     @media screen and (min-width:786px) {
+        body {}
         main {
             display: flex;
             flex-direction: row;
+            width: 100%;
+            height: 100%;
         }
         .nav-container {
             height: 100%;
-            width: 20%;
+            position: static;
+            top: 0;
+            width: 40%
         }
         .footer {
             display: none;
         }
         .nav-pan {
             display: flex;
-            height: 100%;
+            height: calc(100% - 80px);
             flex-direction: column;
             justify-content: space-evenly;
         }
         .nav-menu-item {
-            background-color: grey;
-            color: white;
-            border: 1px solid black;
+            background-color: white;
+            color: black;
+            border-bottom: 1px solid grey;
+            height: 100%;
+            width: 100%;
+            text-align: center;
         }
+        .nav-menu-item:hover {
+            cursor: pointer;
+        }
+        .test {
+            position: relative;
+            display: flex;
+            height: 1800%;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            margin: auto;
+        }
+        .carte {
+            width: 100%;
+            height: 100%;
+        }
+        .overview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .overview img:last-child() {}
     }
