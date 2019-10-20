@@ -326,6 +326,9 @@
             align-items: center;
             justify-content: center;
             padding-top:60px;
+            height: auto;
+            min-height: calc((100% / 18) - 140px);
+            max-height: calc((100% / 18) - 140px);
         }
         .img-profile {
             width: 350px;
@@ -477,4 +480,5 @@
         .blue {
             background-color: blue;
         }
+        .people-list { height: 1800%}
     }
