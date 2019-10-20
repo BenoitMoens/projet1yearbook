@@ -303,6 +303,8 @@
     }
     
     @media screen and (min-width:768px) {
+        body { overflow-y: 
+            scroll;}
         #menu {
             display: none;
         }
