@@ -135,6 +135,8 @@ var navPanel = document.getElementById("navigation-panel");
 
 1) Répcupérer l'event scroll // scroll vers le haut, scroll vers le vas
 */
+
+/*
 i = 0;
 var lastScrollTop = 0;
 window.addEventListener("scroll", () => {
