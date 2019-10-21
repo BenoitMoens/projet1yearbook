@@ -6,9 +6,17 @@
     
     .nav-container {
         width: 100%;
-        height: 60px;
+        height: 80px;
         position: fixed;
         z-index: 1;
+    }
+    
+    .overview {
+        display: none;
+    }
+    
+    .nav-pan {
+        display: none;
     }
     
     .nav-bar {
@@ -18,10 +26,6 @@
         display: flex;
         flex-direction: row;
         order: 1px solid black;
-    }
-    
-    .nav-pan {
-        display: none;
     }
     
     h1 {
@@ -85,7 +89,7 @@
     
     .nav-visible {
         width: 40%;
-        background-color: rgba(192, 34, 34);
+        background-color: rgb(192, 34, 34);
     }
     
     .nav-invisible {
@@ -108,17 +112,13 @@
         border-right: 1px solid black;
     }
     
-    .test {
+    .people-container {
         position: relative;
-        width: 1800%;
+        width: 1900%;
         display: flex;
         height: 100%;
         display: flex;
         flex-direction: row;
-    }
-    
-    .overview {
-        display: none;
     }
     
     .menu {
@@ -179,15 +179,17 @@
     .carte {
         position: relative;
         box-sizing: border-box;
-        width: 200%;
+        width: 100%;
+        margin-bottom: 20px;
         display: flex;
-        /*border: 2px solid rgba(199, 68, 68, 0.3); */
         flex-direction: column;
         align-items: center;
-        border-radius: 20px;
-        background-image: url("/Fond01.png");
-        height: 100%;
+        /*height: 100%;*/
         justify-content: center;
+    }
+    
+    .people-container .carte:first-child {
+        align-self: flex-start
     }
     
     .img-profile {
@@ -203,19 +205,17 @@
     
     .proprietes {
         display: grid;
-        grid-template-columns: 120px 120px;
+        grid-template-columns: 120px 180px;
         grid-template-rows: auto;
         text-transform: uppercase;
         font-size: 12px;
         text-overflow: ellipsis;
         padding: 20px;
         text-align: center;
-        background-image: url("Fond01.png");
     }
-    
-    .proprietes div {
+    /*.proprietes div {
         padding-bottom: 5px;
-    }
+    }/* Je préfère sans */
     
     .proprietes div:nth-child(2n+1) {
         font-weight: 600;
@@ -223,7 +223,7 @@
     }
     
     .proprietes div:nth-child(2n) {
-        text-align: left;
+        text-align: right;
         padding-left: 10px;
     }
     
@@ -234,77 +234,241 @@
     .footer {
         position: absolute;
         bottom: 0;
-        height: 40px;
+        height: 50px;
         width: 100%;
         background-color: rgb(194, 34, 34);
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    
-    .form {
-        position: fixed;
-        top: 100px;
-    }
     /*Dealing with svgs*/
     
     svg {
         border: 1px solid white;
         border-radius: 50%;
-        padding: 5px;
+        padding: 2px;
+        margin-top: 2px;
     }
     
-    @media screen and (min-width:786px) {
-        body {}
-        main {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            height: 100%;
-        }
-        .nav-container {
-            height: 100%;
-            position: static;
-            top: 0;
-            width: 40%
-        }
-        .footer {
+    .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .description-content {
+        display: flex;
+        flex-direction: row;
+        height: 50px;
+        margin-top: 10px;
+    }
+    
+    .description div:first-child {
+        font-weight: 600;
+    }
+    
+    .description-content div:nth-child(1) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+    
+    .description-content div:nth-child(2) {
+        align-self: flex-end;
+        box-sizing: content-box;
+        border-radius: 50px;
+        border: solid whitesmoke;
+        padding: 12px;
+        margin-bottom: -10px;
+        font-weight: 0;
+    }
+    
+    .description-content div:nth-child(3) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -50px;
+        margin-left: 20px;
+    }
+    
+    .fond {
+        /*background-image: linear-gradient(grey, white);*/
+        background-image: url("WCS.png");
+        background-position: bottom;
+        background-origin: padding-box;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    @media screen and (min-width:768px) {
+        #menu {
             display: none;
+        }
+        .carte {
+            box-sizing: border-box;
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            /*border: 2px solid rgba(199, 68, 68, 0.3); */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        /* .proprietes
+    {
+        margin-left: 400px;
+        font-size: 20px;
+    } */
+        .img-profile {
+            margin-left: 400px;
+            width: 350px;
+            height: 350px;
+        }
+        .people-container {
+            width: 100%;
+            height: 1900%;
+            flex-direction: column
+        }
+        .carte h2 {
+            margin-left: 400px;
+            font-size: 50px;
+        }
+        .proprietes {
+            display: grid;
+            grid-template-columns: 120px 240px;
+            grid-template-rows: auto;
+            text-transform: uppercase;
+            font-size: 12px;
+            text-overflow: ellipsis;
+            padding: 20px;
+            font-size: 20px;
+            margin-left: 450px;
+        }
+        .proprietes div:nth-child(2n+1) {
+            text-align: left;
         }
         .nav-pan {
             display: flex;
-            height: calc(100% - 80px);
             flex-direction: column;
-            justify-content: space-evenly;
+            position: fixed;
+            height: calc(100% - 180px);
+            width: 600px;
+            background-color: white;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .nav-pan a {
+            width: 75%;
         }
         .nav-menu-item {
-            background-color: white;
             color: black;
-            border-bottom: 1px solid grey;
-            height: 100%;
-            width: 100%;
+            font-size: 24px;
+            padding: 2px;
+            text-transform: uppercase;
+            border: 2px solid rgba(199, 68, 68, 0.8);
+            border-radius: 20px;
+            border-left: none;
             text-align: center;
         }
+        .image {
+            width: 250px;
+            height: 60px;
+            margin-top: 5px;
+            margin-left: 25px;
+        }
         .nav-menu-item:hover {
-            cursor: pointer;
+            color: yellow;
+            background-color: rgb(192, 34, 34);
+            border-radius: 20px;
+            /* padding-top: 10px;
+        padding-bottom: 5px; */
         }
-        .test {
-            position: relative;
-            display: flex;
-            height: 1800%;
-            display: flex;
-            flex-direction: column;
-            width: 60%;
-            margin: auto;
-        }
-        .carte {
-            width: 100%;
-            height: 100%;
+        .profile-pic {
+            /* explanation below */
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 2px solid rgb(194, 34, 34);
+            padding: 15px;
+            border-top: none;
+            border-left: none;
+            margin-top: 10px;
+            margin-right: 5px;
         }
         .overview {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            align-items: center;
+            margin-left: 600px;
+            margin-top: 80px;
+            overflow-y: auto;
+            min-height: calc((100% / 19) - 140px);
+            background-image: url('WCS.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
         }
-        .overview img:last-child() {}
+        a {
+            text-decoration: none;
+        }
+        .description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 400px;
+        }
+        .description-content {
+            display: flex;
+            flex-direction: row;
+            height: 50px;
+            margin-top: 10px;
+        }
+        .description div:first-child {
+            font-weight: 600;
+        }
+        .description-content div:nth-child(1) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+        .description-content div:nth-child(2) {
+            align-self: flex-end;
+            box-sizing: content-box;
+            border-radius: 50px;
+            border: solid whitesmoke;
+            padding: 12px;
+            margin-bottom: -10px;
+            font-weight: 0;
+        }
+        .description-content div:nth-child(3) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -50px;
+            margin-left: 20px;
+        }
+        .carte .footer {
+            display: none;
+        }
+        .carte-fond {
+            display: none;
+        }
+        .footer-desktop {
+            position: fixed;
+            bottom: 0;
+            height: 60px;
+            width: 100%;
+            background-color: rgb(192, 34, 34);
+        }
+        #people-container #Antoine-link:hover~.overview #Antoine {
+            opacity: 0.8
+        }
+        .blue {
+            background-color: blue;
+        }
     }
