@@ -28,7 +28,7 @@ const wildersArray = [{
         onFocus: false
     },
     {
-        name: "Célestine",
+        name: "Celestine",
         type: "WCS Master, Alumni",
         origine: "Belgium",
         html: 3,
@@ -281,12 +281,14 @@ for (let i = 0; i < wildersArray.length; i++) {
 let i;
 
 const changePosition = (position, direction) => {
+    let getElementPosition = position + direction;
     myElement = document.getElementById(wildersArray[position + direction].name);
     myElement.scrollIntoView();
 
 }
 
 const changeColor = (position) => {
+
     let aTag = document.getElementsByClassName("nav-menu-item");
     aTag[position].classList.add("scroll");
     for (let i = 0; i < aTag.length; i++) {
@@ -324,30 +326,36 @@ const changeState = (actual, next) => {
     state[next] = true;
 };
 
-window.addEventListener('wheel', event => {
-    let actualIndex = state.findIndex(element => element === true);
-    if (event.deltaY < 0) { //UP
-        if (actualIndex < 1) {
-            i = 0;
-            previousIndex = 17;
-        } else {
-            i = actualIndex;
-            previousIndex = i - 1;
-        }
-        changeState(i, previousIndex);
-        changeColor(previousIndex);
-        changePosition(previousIndex, 0);
+if (window.innerWidth >= 768) {
+    window.addEventListener('wheel', event => {
 
-    } else if (event.deltaY > 0) { //DOWN
-        if (actualIndex >= 18) {
-            i = 17;
-            nextIndex = 1;
-        } else {
-            i = actualIndex;
-            nextIndex = i + 1;
+        let actualIndex = state.findIndex(element => element === true) == -1 ? 0 : state.findIndex(element => element === true)
+
+        if (event.deltaY < 0) { //UP
+            if (actualIndex < 1) {
+                i = 0;
+                previousIndex = 17;
+            } else {
+                i = actualIndex;
+                previousIndex = i - 1;
+            }
+            changeState(i, previousIndex);
+            changeColor(previousIndex);
+            changePosition(previousIndex, 0);
+
+        } else if (event.deltaY > 0) { //DOWN
+            if (actualIndex >= 17) {
+                i = 17;
+                nextIndex = 0;
+            } else {
+                i = actualIndex;
+                nextIndex = i + 1;
+            }
+            changeState(i, nextIndex);
+            changeColor(actualIndex);
+            changePosition(nextIndex, nextIndex === 0 ? 17 : -1);
         }
-        changeState(i, nextIndex);
-        changeColor(actualIndex);
-        changePosition(nextIndex, -1);
-    }
-});
+    });
+} else {
+    window.removeEventListener('wheel', event => {});
+}
