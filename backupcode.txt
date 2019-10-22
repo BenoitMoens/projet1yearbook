@@ -1,0 +1,41 @@
+/*
+
+1) Répcupérer l'event scroll // scroll vers le haut, scroll vers le vas
+*/
+
+/*
+let lastATagPosition = 0;
+
+let lastScrollTop = 0;
+window.addEventListener("scroll", () => {
+    console.log("***Begin****")
+    i = lastATagPosition;
+    console.log(i)
+    var scrollingPosition = window.pageYOffset;
+    if (scrollingPosition > lastScrollTop) {
+        //scrolling down
+        wildersArray[i].onFocus = true;
+        //wildersArray[i + 1].onFocus = false;
+        i >= 16 ? i = 0 : i = i + 1;
+        const positionMenuPrev = document.getElementById(tableMenu[i].id);
+        const positionMenuNext = document.getElementById(tableMenu[i + 1].id);
+        console.log(positionMenuPrev);
+        console.log(positionMenuNext);
+        positionMenuPrev.classList.add('yellow-back');
+        positionMenuNext.classList.remove('yellow-back;');
+        i = i + 1;
+    } else if (scrollingPosition < lastScrollTop) {
+        //scrolling up
+        //wildersArray[i].onFocus = true;
+        //wildersArray[i + 1].onFocus = false;
+        //i >= 2 ? i = 0 : i = i + 1;
+
+    }
+    lastScrollTop = scrollingPosition <= 0 ? 0 : scrollingPosition; // For Mobile or negative scrolling
+    lastATagPosition = i;
+
+    console.log("***End****")
+
+});
+
+*/

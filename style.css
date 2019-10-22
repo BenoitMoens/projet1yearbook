@@ -315,7 +315,9 @@
     }
     
     @media screen and (min-width:768px) {
-        body {}
+        body {
+            overflow-y: hidden;
+        }
         #menu {
             display: none;
         }
@@ -330,8 +332,8 @@
             justify-content: center;
             padding-top: 60px;
             height: auto;
-            min-height: calc((100% / 18) - 140px);
-            max-height: calc((100% / 18) - 140px);
+            /*min-height: calc((100% / 18) - 140px);
+            max-height: calc((100% / 18) - 140px);*/
         }
         .img-profile {
             width: 350px;
@@ -394,6 +396,10 @@
             margin-left: 25px;
         }
         .nav-menu-item:hover {
+            color: yellow;
+            border-radius: 20px;
+        }
+        .scroll {
             color: yellow;
             background-color: rgb(192, 34, 34);
             border-radius: 20px;
@@ -483,8 +489,5 @@
         }
         .people-list {
             height: 1800%
-        }
-        .yellow-back {
-            background-color: yellow;
         }
     }
