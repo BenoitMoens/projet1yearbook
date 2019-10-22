@@ -120,15 +120,15 @@
         display: flex;
         flex-direction: row;
     }
-
+    
     #people-list {
-        display:flex;
-        position:relative;
+        display: flex;
+        position: relative;
     }
-
+    
     .people-list {
-        display:flex;
-        width:100%;
+        display: flex;
+        width: 100%;
     }
     
     .menu {
@@ -310,9 +310,12 @@
         background-repeat: no-repeat;
     }
     
+    .yellow-back {
+        background-color: yellow;
+    }
+    
     @media screen and (min-width:768px) {
-        body { overflow-y: 
-            scroll;}
+        body {}
         #menu {
             display: none;
         }
@@ -325,7 +328,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding-top:60px;
+            padding-top: 60px;
             height: auto;
             min-height: calc((100% / 18) - 140px);
             max-height: calc((100% / 18) - 140px);
@@ -338,11 +341,10 @@
             width: 60%;
             height: 1900%;
             flex-direction: column;
-            float:left;
-            left:40%;
+            float: left;
+            left: 40%;
         }
         .carte h2 {
-    
             font-size: 50px;
         }
         .proprietes {
@@ -358,9 +360,8 @@
         .proprietes div:nth-child(2n+1) {
             text-align: left;
         }
-
         .people-list {
-            flex-direction:column;
+            flex-direction: column;
         }
         .nav-pan {
             display: flex;
@@ -396,7 +397,6 @@
             color: yellow;
             background-color: rgb(192, 34, 34);
             border-radius: 20px;
-
         }
         .profile-pic {
             width: 160px;
@@ -419,7 +419,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
-            position:relative;
+            position: relative;
             margin-top: 80px
         }
         a {
@@ -469,10 +469,11 @@
         .footer-desktop {
             position: fixed;
             bottom: 0;
-            left:0;
+            left: 0;
             height: 60px;
             width: 100%;
             background-color: rgb(192, 34, 34);
+            z-index: 10
         }
         #people-container #Antoine-link:hover~.overview #Antoine {
             opacity: 0.8
@@ -480,5 +481,10 @@
         .blue {
             background-color: blue;
         }
-        .people-list { height: 1800%}
+        .people-list {
+            height: 1800%
+        }
+        .yellow-back {
+            background-color: yellow;
+        }
     }
