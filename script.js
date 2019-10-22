@@ -6,7 +6,7 @@ const wildersArray = [{
         css: 2,
         javascript: "coming soon",
         catch: "Bientôt",
-        onFocus: true
+        onFocus: false
     },
     {
         name: "Astrid",
@@ -28,7 +28,7 @@ const wildersArray = [{
         onFocus: false
     },
     {
-        name: "Célestine",
+        name: "Celestine",
         type: "WCS Master, Alumni",
         origine: "Belgium",
         html: 3,
@@ -248,8 +248,13 @@ for (let i = 0; i < wildersArray.length; i++) {
     articlePeople.innerHTML = articleContent;
 }
 
-const wilderPics = document.getElementById('profile-list');
 
+const wilderPics = document.getElementById('profile-list');
+const navPanel = document.getElementById("navigation-panel");
+const tableMenu = [];
+const state = [];
+
+//Create profile-pic overview
 for (let i = 0; i < wildersArray.length; i++) {
     let picProfile = document.createElement("img")
     picProfile.src = "img/" + wildersArray[i].name + ".jpg"
@@ -257,11 +262,7 @@ for (let i = 0; i < wildersArray.length; i++) {
     picProfile.classList.add("profile-pic");
 };
 
-const navigationPanel = document.getElementById("navigation-panel");
-
-const tableMenu = [];
-const state = [];
-
+//Create desktop menu list
 for (let i = 0; i < wildersArray.length; i++) {
     let aTag = document.createElement("a");
     aTag.id = wildersArray[i].name + "-link";
@@ -272,116 +273,89 @@ for (let i = 0; i < wildersArray.length; i++) {
     if (wildersArray[i].onFocus === true) {
         aTag.classList.add("yellow-back");
     }
-    navigationPanel.appendChild(aTag);
+    navPanel.appendChild(aTag);
     tableMenu.push(aTag);
-    state.push(wildersArray[i].onFocus);
-
+    state[i] = (wildersArray[i].onFocus);
 }
-console.log(state)
 
-var navPanel = document.getElementById("navigation-panel");
-/*
-
-1) Répcupérer l'event scroll // scroll vers le haut, scroll vers le vas
-*/
-
-/*
-let lastATagPosition = 0;
-
-let lastScrollTop = 0;
-window.addEventListener("scroll", () => {
-    console.log("***Begin****")
-    i = lastATagPosition;
-    console.log(i)
-    var scrollingPosition = window.pageYOffset;
-    if (scrollingPosition > lastScrollTop) {
-        //scrolling down
-        wildersArray[i].onFocus = true;
-        //wildersArray[i + 1].onFocus = false;
-        i >= 16 ? i = 0 : i = i + 1;
-        const positionMenuPrev = document.getElementById(tableMenu[i].id);
-        const positionMenuNext = document.getElementById(tableMenu[i + 1].id);
-        console.log(positionMenuPrev);
-        console.log(positionMenuNext);
-        positionMenuPrev.classList.add('yellow-back');
-        positionMenuNext.classList.remove('yellow-back;');
-        i = i + 1;
-    } else if (scrollingPosition < lastScrollTop) {
-        //scrolling up
-        //wildersArray[i].onFocus = true;
-        //wildersArray[i + 1].onFocus = false;
-        //i >= 2 ? i = 0 : i = i + 1;
-
-    }
-    lastScrollTop = scrollingPosition <= 0 ? 0 : scrollingPosition; // For Mobile or negative scrolling
-    lastATagPosition = i;
-
-    console.log("***End****")
-
-});
-
-*/
+let i;
 
 const changePosition = (position, direction) => {
+    let getElementPosition = position + direction;
     myElement = document.getElementById(wildersArray[position + direction].name);
     myElement.scrollIntoView();
 
 }
 
 const changeColor = (position) => {
+
     let aTag = document.getElementsByClassName("nav-menu-item");
-    aTag[position].classList.add("yellow-back");
+    aTag[position].classList.add("scroll");
     for (let i = 0; i < aTag.length; i++) {
         if (i === position) {
             continue;
         }
-        aTag[i].classList.remove("yellow-back");
+        aTag[i].classList.remove("scroll");
     }
 }
+
+/* CLICK EVENT */
+
+const getActualFocusPosition = (state) => {
+    return state.findIndex(element => element === true);
+}
+
+let anchorTag = document.getElementsByClassName("nav-menu-item");
+
+[...anchorTag].forEach(element => {
+    element.addEventListener("click", (element) => {
+        let onFocus = getActualFocusPosition(state);
+        //hack : voir console.log(element) in srcElement
+        let idOfClickedElement = element.srcElement.id;
+        let clickedId = tableMenu.findIndex(el => el.id == idOfClickedElement);
+        changeState(onFocus, clickedId);
+        changeColor(clickedId)
+    });
+});
+
+
+/* WHEEL EVENT */
 
 const changeState = (actual, next) => {
     state[actual] = false;
     state[next] = true;
+};
+
+if (window.innerWidth >= 768) {
+    window.addEventListener('wheel', event => {
+
+        let actualIndex = state.findIndex(element => element === true) == -1 ? 0 : state.findIndex(element => element === true)
+
+        if (event.deltaY < 0) { //UP
+            if (actualIndex < 1) {
+                i = 0;
+                previousIndex = 17;
+            } else {
+                i = actualIndex;
+                previousIndex = i - 1;
+            }
+            changeState(i, previousIndex);
+            changeColor(previousIndex);
+            changePosition(previousIndex, 0);
+
+        } else if (event.deltaY > 0) { //DOWN
+            if (actualIndex >= 17) {
+                i = 17;
+                nextIndex = 0;
+            } else {
+                i = actualIndex;
+                nextIndex = i + 1;
+            }
+            changeState(i, nextIndex);
+            changeColor(actualIndex);
+            changePosition(nextIndex, nextIndex === 0 ? 17 : -1);
+        }
+    });
+} else {
+    window.removeEventListener('wheel', event => {});
 }
-
-let i = 0;
-
-window.addEventListener('wheel', event => {
-    let actualIndex = state.findIndex(element => element === true);
-    if (event.deltaY < 0) { //UP
-        if (actualIndex < 1) {
-            i = 0;
-            previousIndex = 17;
-        } else {
-            i = actualIndex;
-            previousIndex = i - 1;
-        }
-        changeState(i, previousIndex);
-        changeColor(previousIndex);
-        changePosition(previousIndex, 0);
-
-    } else if (event.deltaY > 0) { //DOWN
-        if (actualIndex > 17) {
-            i = 0;
-            nextIndex = 0;
-        } else {
-            i = actualIndex;
-            nextIndex = i + 1;
-        }
-        changeState(i, nextIndex);
-        changeColor(actualIndex);
-        changePosition(nextIndex, -1);
-    }
-    i = actualIndex;
-});
-
-/*
-2) Dans mon array wildersArray, on rentre dans l 'array d'
-objet
-
-
-quand je scroll, propriété de Focus On = true et quand je scroll, off et le prochain off.
-
-3) Donc créer une classe qui toggle sur la couleur * /
-
-*/
