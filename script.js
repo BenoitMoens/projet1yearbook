@@ -250,7 +250,7 @@ for (let i = 0; i < wildersArray.length; i++) {
 
 
 const wilderPics = document.getElementById('profile-list');
-const navPanel = document.getElementById("navigation-panel");
+const navPanel = document.getElementById("name-list-panel");
 const tableMenu = [];
 const state = [];
 
@@ -359,3 +359,9 @@ if (window.innerWidth >= 768) {
 } else {
     window.removeEventListener('wheel', event => {});
 }
+
+window.addEventListener("dblclick", () => {
+    const overview = document.getElementById('wilderPic');
+    overview.scrollIntoView();
+
+});

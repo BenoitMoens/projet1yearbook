@@ -29,7 +29,7 @@
         display: none;
     }
     
-    .nav-pan {
+    .name-list {
         display: none;
     }
     
@@ -375,7 +375,7 @@
         .people-list {
             flex-direction: column;
         }
-        .nav-pan {
+        .name-list {
             display: flex;
             flex-direction: column;
             position: fixed;
@@ -386,7 +386,7 @@
             align-items: center;
             top: 80px;
         }
-        .nav-pan a {
+        .name-list a {
             width: 75%;
         }
         .nav-menu-item {
@@ -506,5 +506,8 @@
         }
         .people-list {
             height: 1800%
+        }
+        .margin-top-60 {
+            margin-top: 60px;
         }
     }
